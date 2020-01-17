@@ -18,4 +18,14 @@ public class UserController {
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
+
+    @PostMapping
+    public User createUser(@RequestBody User user) {
+        return userRepository.save(user);
+    }
+
+    @DeleteMapping
+    public void deleteAllUsers() {
+        userRepository.deleteAll();
+    }
 }
